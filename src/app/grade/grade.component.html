@@ -1,0 +1,25 @@
+<div class="col-md-8">
+<form [formGroup]="frmGrade">
+
+<div class="form-group" 
+      [ngClass]="{'has-error':!frmGrade.controls['name'].valid && frmGrade.controls['name'].touched ,
+                  'has-success':frmGrade.controls['name'].valid && frmGrade.controls['name'].touched}">
+  <label class="control-label" for="name">Grade Name</label>
+  <input type="text" class="form-control" id="name" formControlName="name">
+  <div *ngIf="frmGrade.controls['name'].hasError('required') && frmGrade.controls['name'].touched"
+       class="alert alert-danger">
+       You must include a grade name.
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="control-label" for="inputLarge">Grade Description (Optional)</label>
+  <input class="form-control input-lg" type="text" id="inputLarge" formControlName="description">
+</div>
+
+  <button type="submit" class="btn btn-success" *ngIf='isNew' (click)="onAdd()" [disabled]='!frmGrade.valid'>Add</button>
+  <button type="submit" class="btn btn-primary" *ngIf='!isNew'>Edit</button>
+  <button [routerLink]='["/grade-listing"]' class="btn btn-warning">Cancel</button>
+  
+</form>
+</div>
