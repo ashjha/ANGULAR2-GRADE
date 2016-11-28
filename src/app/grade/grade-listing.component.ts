@@ -19,4 +19,12 @@ export class GradeListingComponent implements OnInit {
     this.grades=this.gradeService.getGrades();
   }
 
+  onEdit(grade:Grade){
+    
+  }
+  onDelete(grade:Grade){
+    if(confirm("Are you sure ?")){
+      this.gradeService.deleteGrade(grade);
+    }
+  }
 }

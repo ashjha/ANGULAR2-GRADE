@@ -17,8 +17,8 @@
   <input class="form-control input-lg" type="text" id="inputLarge" formControlName="description">
 </div>
 
-  <button type="submit" class="btn btn-success" *ngIf='isNew' (click)="onAdd()" [disabled]='!frmGrade.valid'>Add</button>
-  <button type="submit" class="btn btn-primary" *ngIf='!isNew'>Edit</button>
+  <button type="submit" class="btn btn-success" *ngIf='isNew' (click)="onAdd();false" [disabled]='!frmGrade.valid'>Add</button>
+  <button type="submit" class="btn btn-primary" *ngIf='!isNew' (click)="onUpdate();false" [disabled]='!frmGrade.valid'>Update</button>
   <button [routerLink]='["/grade-listing"]' class="btn btn-warning">Cancel</button>
   
 </form>

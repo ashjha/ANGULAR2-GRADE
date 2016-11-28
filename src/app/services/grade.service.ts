@@ -11,6 +11,10 @@ export class GradeService {
   getGrades(){
     return this.grades;
   }  
+
+  getOneGrade(idx){
+    return this.grades[idx];
+  }
   
   editGrade(oldGrade:Grade,newGrade:Grade){
     this.grades.splice(this.grades.indexOf(oldGrade),1,newGrade);
